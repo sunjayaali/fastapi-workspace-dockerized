@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: .
+    volumes:
+      - ./:/app:cached
+    ports:
+      - 8000:8000
+
+  postgres:
+    image: postgres:alpine
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
